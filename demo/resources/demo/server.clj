@@ -1,4 +1,4 @@
-(ns server
+(ns demo.server
   (:require [ring.util.response :refer [file-response]]))
 
 (defn not-found-handler

@@ -1,0 +1,3 @@
+{:require  [demo.core]
+ :init-fns [demo.core/init]
+ :compiler-options {:asset-path "/js/app.out"}}
