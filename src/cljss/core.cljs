@@ -5,11 +5,11 @@
 (defn- get-default [obj] (.-default obj))
 
 (defn setup
+  "Setup JSS. Plugins must be initialized if adding them to setup."
   ([]
-   (setup (get-default preset)))
-  ([plugins]
-   (.setup (get-default jss)
-           plugins)))
+   (.setup (get-default jss) ((get-default preset))))
+  ([& plugins]
+   (apply (aget (get-default jss) "use") plugins)))
 
 (defn classes
   [styles]
