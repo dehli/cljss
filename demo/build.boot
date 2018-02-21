@@ -25,11 +25,10 @@
 
 (task-options!
  cljs
- {:optimizations :none
+ {:optimizations :advanced
   :compiler-options
   {:warnings true
-   :pretty-print true
-   :install-deps true}}
+   :pretty-print true}}
 
  reload
  {:on-jsload 'demo.core/mount-root})

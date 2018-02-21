@@ -5,7 +5,10 @@
 (cljss/setup)
 
 (def styles {:container {:color :blue
-                         :font-family "fantasy"}})
+                         :font-family :papyrus}
+             "@media (max-width: 800px)"
+             {:container {:color :red}}})
+
 (defn- component []
   (let [classes (cljss/classes styles)]
     [:div {:className (:container classes)}
@@ -13,7 +16,7 @@
 
 (defn mount-root []
   (reagent/render [component]
-                  (.getElementById js/document "reagent-app")))
+    (.getElementById js/document "reagent-app")))
 
 (defn init []
   (mount-root))

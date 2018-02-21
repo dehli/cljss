@@ -1,21 +1,23 @@
 (ns cljss.core
-  (:require ["jss"                :as jss]
-            ["jss-preset-default" :as preset]))
+  (:require [jss]
+            [jss-preset-default]))
 
-(defn- get-default [obj] (.-default obj))
+(def ^:private jss
+  (.getValueByKeys goog.object js/window "jss" "default"))
+(def ^:private preset
+  (.getValueByKeys goog.object js/window "jssPreset" "default"))
 
 (defn setup
   "Setup JSS. Plugins must be initialized if adding them to setup."
   ([]
-   (.setup (get-default jss) ((get-default preset))))
+   (.setup jss (preset)))
   ([& plugins]
-   (apply (aget (get-default jss) "use") plugins)))
+   (apply (.-use jss) plugins)))
 
 (defn classes
   [styles]
   (js->clj
    (.-classes
     (.attach
-     (.createStyleSheet (get-default jss)
-                        (clj->js styles))))
+     (.createStyleSheet jss (clj->js styles))))
    :keywordize-keys true))

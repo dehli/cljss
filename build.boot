@@ -1,6 +1,6 @@
 (set-env!
  :jvm-opts ^:replace ["-Xmx1g" "-server"]
- :resource-paths #{"src"}
+ :resource-paths #{"src" "libs"}
  :dependencies
  '[[org.clojure/clojurescript       "1.9.946"]
 
@@ -38,10 +38,9 @@
   :ensure-version +version+}
 
  cljs
- {:optimizations :none
+ {:optimizations :simple
   :compiler-options
-  {:main 'cljss.core
-   :install-deps true}})
+  {:main 'cljss.core}})
 
 (defn- build
   []
