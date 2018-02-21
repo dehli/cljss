@@ -9,10 +9,8 @@
 
 (defn setup
   "Setup JSS. Plugins must be initialized if adding them to setup."
-  ([]
-   (.setup jss (preset)))
-  ([& plugins]
-   (apply (.-use jss) plugins)))
+  []
+  (.setup jss (preset)))
 
 (defn classes
   [styles]
