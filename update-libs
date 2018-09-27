@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cp -r ./node_modules/jss/dist/ ./libs/jss
+cp -r ./node_modules/jss-preset-default/dist/ ./libs/jss-preset-default

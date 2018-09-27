@@ -31,3 +31,10 @@ repo for extensive documentation.
 (defn init []
   (mount-root))
 ```
+
+## Testing a new version
+
+```
+boot install-local
+cd ./demo && boot run
+```

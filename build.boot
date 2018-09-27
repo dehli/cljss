@@ -2,12 +2,12 @@
  :jvm-opts ^:replace ["-Xmx1g" "-server"]
  :resource-paths #{"src" "libs"}
  :dependencies
- '[[org.clojure/clojurescript       "1.9.946"]
+ '[[org.clojure/clojurescript       "1.10.238"]
 
    [adzerk/boot-cljs                "2.1.4"          :scope "test"]
    [adzerk/bootlaces                "0.1.13"         :scope "test"]
    [com.cemerick/piggieback         "0.2.2"          :scope "test"]
-   [org.clojure/clojure             "1.9.0-RC2"      :scope "test"]
+   [org.clojure/clojure             "1.9.0"          :scope "test"]
    [org.clojure/tools.nrepl         "0.2.13"         :scope "test"]
    [powerlaces/boot-cljs-devtools   "0.2.0"          :scope "test"]])
 
@@ -18,7 +18,7 @@
  '[boot.git                      :refer [last-commit]])
 
 (def project 'dehli/cljss)
-(def +version+ "0.1.0-SNAPSHOT")
+(def +version+ "0.1.1")
 (bootlaces! +version+)
 
 (task-options!
