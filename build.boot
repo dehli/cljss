@@ -18,7 +18,7 @@
  '[boot.git                      :refer [last-commit]])
 
 (def project 'dehli/cljss)
-(def +version+ "0.1.0-SNAPSHOT")
+(def +version+ "0.1.1-SNAPSHOT")
 (bootlaces! +version+)
 
 (task-options!
